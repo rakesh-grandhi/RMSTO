@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_names">
+      <item>Black</item>
+      <item>Red</item>
+      <item>Green</item>
+    </string-array>
+    <string-array name="color_values">
+      <item>BLK</item>
+      <item>RED</item>
+      <item>GRN</item>
+    </string-array>
+    
+    <string-array name="camera_list">
+      <item>Device</item>
+      <item>Custom</item>
+     
+    </string-array>
+    <string-array name="camera_values">
+      <item>DEV</item>
+      <item>CUM</item>
+      
+    </string-array>
+    
+   <string-array name="TenantStatus">
+        <item>Contract Signed</item>
+        <item>Move In Date Finalised</item>
+        <item>Move In Inspection Complete</item>
+        <item>Moved In</item>
+        <item>Moved Out</item>
+       
+    </string-array> 
+    
+    <string-array name="CrewStatus">
+        <item>Active</item>
+        <item>Inactive</item>
+        
+       
+    </string-array> 
+    
+   <string-array name="ApplianceList">
+        <item>Refrigerator</item>
+        <item>Microwave</item>
+        <item>Oven</item>
+        <item>Stove</item>
+        <item>Dish Washer</item>
+        <item>Dryer</item>
+        <item>Washer</item>
+        <item>Food Dispenser</item>
+        <item>Water Heater</item>
+        <item>Air Conditioner</item>
+        <item>Bulb</item>
+        <item>Fan</item>
+        <item>Thermostat</item>
+    </string-array>
+</resources>

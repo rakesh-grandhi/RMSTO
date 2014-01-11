@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+   <item android:id="@+id/UpLoadPic"
+      android:title="@string/menuitem_UpLoadPic" 
+      android:orderInCategory="1" android:alphabeticShortcut="e"     
+      android:icon="@android:drawable/ic_menu_edit"></item>
+
+   <item android:id="@+id/Synch" 
+      android:title="@string/menuitem_Syncht"
+      android:orderInCategory="2" android:alphabeticShortcut="S"    
+      android:icon="@android:drawable/ic_delete"></item>
+   
+   <item android:id="@+id/SynchUp" 
+      android:title="@string/menuitem_SynchUpt"
+      android:orderInCategory="3" android:alphabeticShortcut="U"    
+      android:icon="@android:drawable/ic_delete"></item> 
+      
+      <item android:id="@+id/DeleteData" 
+      android:title="@string/menuitem_DeleteData"
+      android:orderInCategory="4" android:alphabeticShortcut="D"    
+      android:icon="@android:drawable/ic_delete"></item>
+      
+      <item android:id="@+id/DeletePicData" 
+      android:title="@string/menuitem_DeletePicData"
+      android:orderInCategory="5" android:alphabeticShortcut="P"
+    
+      android:icon="@android:drawable/ic_delete"></item>
+      
+      <item android:id="@+id/Register" 
+      android:title="@string/menuitem_Regist"
+      android:orderInCategory="6" android:alphabeticShortcut="R"
+    
+      android:icon="@android:drawable/ic_delete"></item>
+      
+      <item android:id="@+id/UnRegister" 
+      android:title="@string/menuitem_UnRegist"
+      android:orderInCategory="7" android:alphabeticShortcut="R"
+    
+      android:icon="@android:drawable/ic_delete"></item>
+      
+      
+   </menu>

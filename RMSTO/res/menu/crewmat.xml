@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    
+    
+    <item
+        android:id="@+id/Save"
+        android:title="Save"       
+        android:orderInCategory="1"
+        android:alphabeticShortcut="c"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_save" />
+    
+    <item
+        android:id="@+id/Cancel"
+        android:title="Cancel"       
+        android:orderInCategory="2"
+        android:alphabeticShortcut="c"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_cancel" />
+    
+    
+</menu>

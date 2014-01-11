@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RMS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_orderlist">Orderlist</string>
+    <string name="title_activity_view_order">ViewOrder</string>
+    <string name="title_activity_add_edit_orders">AddEditOrders</string>
+    <string name="button_add_order">Add Order</string>
+    <string name="button_save_order">Save Ordert</string>
+    <string name="menuitem_edit_order">Save Ordert</string>
+    <string name="menuitem_delete_order">Save Ordert</string>
+    <string name="menuitem_Synch_Data">Synch Data</string>
+    <string name="menuitem_Synch">Synch</string>
+    <string name="menuitem_Logout">Log Out</string>
+    <string name="menuitem_logout2">Log Out</string>
+    <string name="hstatus">Order Status</string>
+    <string name="hint_order">Order</string>
+    <string name="hint_matcode">Route</string>
+    <string name="hint_route">MAT Code</string>
+    <string name="hint_startdate">Start Date</string>
+    <string name="hint_hstatus">Order Status</string>
+    <string name="label_order">Order #:</string>
+    <string name="label_matcode">Route:</string>
+    <string name="label_route">MAT Code:</string>
+    <string name="label_startdate">Start Date:</string>
+    <string name="label_enddate">End Date:</string>
+    <string name="label_hstatus">Order Status:</string>
+    <string name="confirmTitle">Are You Sure?</string>
+    <string name="confirmMessage">      This will permanently delete the Order Data</string>
+    <string name="errorButton">OK</string>
+    <string name="errorTitle">Order # is Required</string>
+    <string name="errorMessage">You must enter a Order #</string>
+    <string name="button_delete">Delete</string>
+    <string name="some_text">      Some North American Countries!  </string>
+    <string name="some_hint">   Type here to filter&#8230;  </string>
+    <string name="title_activity_cp_341__meters">CP Points</string>
+    <string name="title_activity_cp10__input">Input CP Info</string>
+    <string name="SerReq">Service Request</string>
+    <string name="ContInfo">Contact Info</string>
+    <string name="Manuals">Manuals</string>
+    <string name="RentHist">Rental History</string>
+    <string name="Houses">Houses</string>
+    <string name="Teants">Tenants</string>
+
+    <string-array name="CP341conditions">
+        <item>CP10 Read Up</item>
+        <item>Install/Replace Anode</item>
+        <item>Install/Replace Insulator(Fitting)</item>
+        <item>Service/Riser Replacement</item>
+        <item>CP10 - CGI</item>
+        <item>CP10 Condition No Longer Exists</item>
+        <item>CP10 SPS Follow Up Required</item>
+    </string-array>
+    <string-array name="CP631conditions">
+        <item>MSA Insulated</item>
+        <item>Install/Replace Anode</item>
+        <item>Additional Work Required</item>
+        <item>Cleared Short</item>
+        <item>CP10 CGI</item>
+        <item>CP10 SPS Follow Up Required</item>
+    </string-array>
+
+    <string name="title_activity_spalsh">CP Point Read</string>
+    <string name="toggle_turn_on">Working</string>
+    <string name="toggle_turn_off">Not Working</string>
+    <string name="animation_2_text_1">31 million consumers</string>
+    <string name="animation_2_text_2">17,500 employees</string>
+    <string name="animation_2_text_3">6 countries</string>
+    <string name="animation_2_text_4">$10 billion Revenue</string>
+    <string name="animation_2_instructions">Select an animation:</string>
+    <string name="animation_3_text">Interpolators</string>
+    <string name="menuitem_Logoutt">Log Out</string>
+    <string name="menuitem_UpLoadPic">Up Load PIC</string>
+    <string name="menuitem_Syncht">Synch</string>
+    <string name="menuitem_Synchc">Synch Down</string>
+    <string name="menuitem_SynchUpt">Synch Up</string>
+    <string name="UploadPhotoBtnl">UpLoad Meter Read from Gallery</string>
+    <string name="title_activity_settings">Preference</string>
+    <string name="title_activity_register2">Register</string>
+    <string name="title_activity_preview">Preview</string>
+    <string name="title_activity_color__dialog">Color Selection</string>
+    <string name="title_activity_width__dialog">Line Type</string>
+    <string name="button_erase">Erase</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_set_color">Set Color</string>
+    <string name="button_set_line_width">Set Line Width</string>
+    <string name="label_alpha">Alpha</string>
+    <string name="label_red">Red</string>
+    <string name="label_green">Green</string>
+    <string name="label_blue">Blue</string>
+    <string name="menuitem_clear">Clear</string>
+    <string name="menuitem_color">Color</string>
+    <string name="menuitem_erase">Erase</string>
+    <string name="menuitem_line_width">Line Width</string>
+    <string name="menuitem_save_image">Save Image</string>
+    <string name="menuitem_upload_image">Submit Image</string>
+    <string name="message_erase">Erase the drawing?</string>
+    <string name="message_error_saving">       There was an error saving the image</string>
+    <string name="message_saved">       Your painting has been saved to the Gallery</string>
+    <string name="title_color_dialog">Choose Color</string>
+    <string name="title_line_width_dialog">Choose Line Width</string>
+    <string name="Log_out">Log Out</string>
+    <string name="title_activity_password_change">Change Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_security_q">Login</string>
+    <string name="menuitem_Takepic">Pic</string>
+    <string name="menuitem_Cancelt">Cancel</string>
+    <string name="menuitem_Savet">Save</string>
+    <string name="title_activity_cp341">CP341</string>
+    <string name="title_activity_cp631__input">CP631_INPUT</string>
+    <string name="menuitem_DeleteData">Delete Data</string>
+    <string name="menuitem_DeletePicData">Delete Pic Data</string>
+    <string name="title_activity_cp638">CP638</string>
+    <string name="title_activity_color_dialog">ColorDialog</string>
+    <string name="title_activity_width_dialog">WidthDialog</string>
+    <string name="menuitem_Regist">Register</string>
+    <string name="menuitem_UnRegist">UnRegister</string>
+    <string name="action_settings"> Settings</string>
+    <string name="title_activity_order_list"> Order List</string>
+    <string name="title_activity_riser_list">RiserList</string>
+    <string name="title_activity_insp_maint">InspMaint</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_maint_insp_tabs">Maintenance and Inspection</string>
+    <string name="title_activity_test">TEST</string>
+    <string name="CGINone">None</string>
+    <string name="CGIFirstAttempt">First Attempt</string>
+    <string name="CGISecondAttempt">Second Attempt</string>
+    <string name="CGILeftLetter">Left Letter</string>
+    <string name="GradeSatisfactory">Satisfactory</string>
+    <string name="GradeSetlow">Set Low</string>
+    <string name="GTPaved">Paved</string>
+    <string name="GTEarth">Earth</string>
+    <string name="title_activity_initial_screen">InitialScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_rooms">Rooms</string>
+    <string name="title_activity_room_list">RoomList</string>
+    <string name="title_activity_appliance_list">Appliance_list</string>
+    <string name="title_activity_matcode_list">MatcodeList</string>
+    <string name="title_activity_servicereq_list">ServicereqList</string>
+    <string name="title_activity_work_request">WorkRequest</string>
+    <string name="title_activity_oinitial_screen">RMS Dash Board</string>
+    <string name="title_activity_ohouses">Houses</string>
+    <string name="title_activity_ohouses_list">House List</string>
+    <string name="title_activity_oteants_list">Teants List</string>
+    <string name="title_activity_ohouse_edit">House</string>
+    <string name="title_activity_oteant_edit">Tenant</string>
+    <string name="title_activity_ohouse_display">Diaplay House</string>
+    <string name="menuitem_add_House">Add House</string>
+    <string name="menuitem_add_Room">Add Room</string>
+    <string name="menuitem_add_tenant">Add Tenant</string>
+    <string name="title_activity_oappliance_display">OapplianceDisplay</string>
+    <string name="title_activity_oappliance_edit">Appliance Edit</string>
+    <string name="title_activity_oroom_display">Room Display</string>
+    <string name="title_activity_oroom_edit">Room Edit</string>
+    <string name="displayallRec">Display all records</string>
+    <string name="add_appl">Add Appliance</string>
+    <string name="title_activity_tenant_display"> Display Tenant</string>
+    <string name="title_activity_otenants_display">Tenants Display</string>
+    <string name="Room_Details">Room Details</string>
+    <string name="Name">Name:</string>
+    <string name="Status">Status:</string>
+    <string name="rent_status">Rent Status:</string>
+    <string name="Nick_Name">Nick Name:</string>
+    <string name="title_activity_ocrew_list">CrewList</string>
+    <string name="title_activity_ocrew_display">Crew Display</string>
+    <string name="title_activity_ocrew_edit">Crew Edit</string>
+    <string name="title_activity_ocrew_mat">Assign MAT Code to Crew</string>
+
+</resources>

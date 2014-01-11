@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="RelativeLayout01" type="id">false</item>
+    <item name="RelativeLayout02" type="id">false</item>
+    <item name="RelativeLayout03" type="id">false</item>
+    
+    <item name="TextView03" type="id">false</item>
+    <item name="LinearLayout02" type="id">false</item>
+    <item name="LinearLayout01" type="id">false</item>
+    <item name="TextView01" type="id">false</item>
+    <item name="EditText01" type="id">false</item>
+    <item name="TextView02" type="id">false</item>
+    <item name="EditText02" type="id">false</item>
+    <item name="EditText03" type="id">false</item>
+  
+    <item name="CheckBox01" type="id">false</item>
+    <item name="Button01" type="id">false</item>
+     <item name="TextView04" type="id">false</item>
+    <item name="LinearLayout05" type="id">false</item>
+    <item name="LinearLayout06" type="id">false</item>
+   
+    <item name="TextView05" type="id">false</item>
+    <item name="TextView06" type="id">false</item>
+    <item name="TextView07" type="id">false</item>
+    <item name="TextView08" type="id">false</item>
+    <item name="TextView09" type="id">false</item>
+    <item name="TextView10" type="id">false</item>
+    <item name="TextView11" type="id">false</item>
+    <item name="TextView12" type="id">false</item>
+    <item name="TextView13" type="id">false</item>
+    <item name="TextView14" type="id">false</item>
+    <item name="TextView15" type="id">false</item>
+    <item name="TextView16" type="id">false</item>
+    <item name="TextView17" type="id">false</item>
+    <item name="TextView18" type="id">false</item>
+    
+  
+    <item name="LinearLayout04" type="id">false</item>
+    <item name="LinearLayout03" type="id">false</item>
+    <item name="LinearLayout12" type="id">false</item>
+    <item name="LinearLayout10" type="id">false</item>
+    <item name="LinearLayout11" type="id">false</item>
+   
+      <item name="LinearLayout13" type="id">false</item>
+   
+   
+    <item name="LinearLayout07" type="id">false</item>
+    <item name="LinearLayout08" type="id">false</item>
+    <item name="LinearLayout09" type="id">false</item>
+    <item name="LinearLayout002" type="id">false</item>
+    <item name="LinearLayout001" type="id">false</item>
+    <item name="LY_Logo_Title" type="id">false</item>
+     <item name="LY_ITEM_DATA_SEL" type="id">false</item>
+      <item name="LY_ORDER_DATA_SEL" type="id">false</item>
+      <item name="LY_Address" type="id">false</item>
+     <item name="Condition" type="id">false</item>
+   
+  
+ 
+</resources>
+
+

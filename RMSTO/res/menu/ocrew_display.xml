@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item android:id="@+id/editCrew"
+      android:title="Edit" 
+      android:orderInCategory="1" android:alphabeticShortcut="e"
+      android:titleCondensed="Edit"
+      android:icon="@android:drawable/ic_menu_edit"></item>
+   <item android:id="@+id/deleteCrew" 
+      android:title="Delete"
+      android:orderInCategory="2" android:alphabeticShortcut="d"
+      android:titleCondensed="Delete"
+      android:icon="@android:drawable/ic_delete"></item>
+
+</menu>

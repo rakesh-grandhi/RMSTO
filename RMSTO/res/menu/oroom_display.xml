@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    
+    <item android:id="@+id/editRoom"
+      android:title="Edit" 
+      android:orderInCategory="1" android:alphabeticShortcut="e"
+      android:titleCondensed="Edit"
+      android:icon="@android:drawable/ic_menu_edit"></item>
+    
+   <item android:id="@+id/deleteRoom" 
+      android:title="Delete"
+      android:orderInCategory="2" android:alphabeticShortcut="d"
+      android:titleCondensed="Delete"
+      android:icon="@android:drawable/ic_delete"></item>
+   
+   <item android:id="@+id/DisplayAppl" 
+      android:title="DisplayAppl"
+      android:orderInCategory="2" android:alphabeticShortcut="r"
+      android:titleCondensed="Dis Appl"
+      android:icon="@android:drawable/ic_delete"></item>
+
+</menu>

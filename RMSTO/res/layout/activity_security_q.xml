@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgr"
+    android:id="@+id/RelativeLayout01"  >
+
+    <RelativeLayout
+         android:id="@+id/RelativeLayout02" 
+         android:background="#ffffffff" 
+         android:layout_width="fill_parent" 
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true">
+         
+        <TextView 
+            android:textSize="20.0dip" 
+            android:textStyle="bold" 
+            android:textColor="#ff000000" 
+            android:gravity="center"
+            android:layout_gravity="center" 
+            android:id="@+id/TextView03" 
+            android:background="@drawable/logo" 
+            android:focusable="true" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    
+ 
+      
+        <LinearLayout 
+            android:orientation="vertical" 
+            android:id="@+id/LinearLayout01" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content"
+             android:layout_marginTop="40.0dip">
+        
+            <EditText
+                android:id="@+id/ETSUserName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip"
+                android:layout_marginTop="5.0dip"
+                android:hint="User ID"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingLeft="6.0dip"
+               
+                style="@style/ContactTextView"/>
+            
+            <TextView 
+                android:textStyle="bold"
+                android:textColor="#ff000000"
+                android:id="@+id/TVSQuestion" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:layout_marginLeft="10.0dip" 
+                android:layout_marginTop="5.0dip" 
+                android:text="Profile" />
+            
+            <EditText
+                android:id="@+id/ETSAnswer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5.0dip"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip"
+                android:layout_marginTop="5.0dip"
+                android:hint="Answer"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingLeft="6.0dip"
+               
+                style="@style/ContactTextView"/>
+            
+           
+             </LinearLayout>
+    
+        
+         <LinearLayout
+             android:id="@+id/LinearLayout02"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_below="@id/LinearLayout01"
+             android:layout_marginTop="10dp"
+             android:orientation="vertical"
+             android:layout_centerHorizontal="true"
+             android:gravity="center" >
+
+             <Button
+                 android:id="@+id/SQSubmit"
+                 android:layout_width="wrap_content"
+                 android:layout_height="30.0dip"
+                
+                 android:layout_marginTop="9.0dip"
+                 android:layout_weight="1"
+                 android:background="@drawable/recoverpassword"
+                 android:onClick="SecurityQA" />
+             
+            
+             
+         </LinearLayout>
+
+      
+         
+
+</RelativeLayout>
+

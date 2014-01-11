@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >   
+<RelativeLayout 
+    android:id="@+id/RelativeLayout01"
+     android:background="@drawable/bgr" 
+     android:layout_width="fill_parent" 
+     android:layout_height="wrap_content">
+        <LinearLayout 
+            android:orientation="vertical"
+             android:id="@+id/LinearLayout01" 
+             android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+               android:layout_marginLeft="5.0dip"
+                android:layout_toLeftOf="@+id/Hstatus">
+            <LinearLayout 
+                android:orientation="horizontal" 
+                android:id="@+id/LinearLayout02" 
+                android:layout_width="fill_parent"
+                 android:layout_height="wrap_content" 
+                 android:layout_marginTop="1.0dip">
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Problem : "
+                    android:textColor="#ff000000"
+                    android:textSize="15.0dip"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:text="Water Leaking"
+                    android:textColor="#ff000000"
+                    android:textSize="13.0dip" />
+
+            </LinearLayout>
+            <LinearLayout
+                 android:orientation="horizontal" 
+                 android:id="@+id/LinearLayout06" 
+                 android:layout_width="fill_parent" 
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentRight="true">
+                <TextView 
+                    android:textSize="15.0dip" 
+                    android:textStyle="bold"
+                     android:textColor="#ff000000" 
+                     android:id="@+id/TextView06" 
+                     android:layout_width="wrap_content" 
+                     android:layout_height="wrap_content" 
+                     android:text="MAT Code  :" />
+                <TextView 
+                    android:textSize="13.0dip"
+                     android:textColor="#ff000000" 
+                     android:id="@+id/mat_code_id" 
+                     android:layout_width="wrap_content" 
+                     android:layout_height="wrap_content" 
+                     android:layout_marginLeft="5.0dip"
+                     android:text="1" />
+            </LinearLayout>
+            <LinearLayout
+                 android:orientation="horizontal"
+                  android:id="@+id/LinearLayout07" 
+                  android:layout_width="fill_parent" 
+                  android:layout_height="wrap_content"
+                   android:layout_marginBottom="3.0dip" 
+                   android:layout_alignParentRight="true" />
+        </LinearLayout>
+        <ImageView 
+            android:id="@+id/Hstatus" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginRight="6.0dip" 
+            android:layout_alignParentRight="true" 
+            android:layout_centerVertical="true"
+             />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item android:id="@+id/addCrewItem"
+      android:title="Add Crew" 
+      android:icon="@android:drawable/ic_menu_add"
+      android:titleCondensed="Add Crew"
+      android:alphabeticShortcut="e"></item>
+     
+     <item android:id="@+id/InsertSampleMAT"
+      android:title="Insert Sample MAT" 
+      android:icon="@android:drawable/ic_menu_add"
+      android:titleCondensed="Insert Sample MAT"
+      android:alphabeticShortcut="e"></item>
+
+</menu>

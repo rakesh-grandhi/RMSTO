@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/editTenant"
+      android:title="Edit" 
+      android:orderInCategory="1" android:alphabeticShortcut="e"
+      android:titleCondensed="Edit"
+      android:icon="@android:drawable/ic_menu_edit"></item>
+   <item android:id="@+id/deleteTenant" 
+      android:title="Delete"
+      android:orderInCategory="2" android:alphabeticShortcut="d"
+      android:titleCondensed="Delete"
+      android:icon="@android:drawable/ic_delete"></item>
+   <item android:id="@+id/CheckoutTenant" 
+      android:title="Check Out Tenant"
+      android:orderInCategory="2" android:alphabeticShortcut="r"
+      android:titleCondensed="Check Out Tenant"
+      android:icon="@android:drawable/ic_delete"></item>
+   <item android:id="@+id/SMSToTenant" 
+      android:title="SMS Tenant"
+      android:orderInCategory="2" android:alphabeticShortcut="r"
+      android:titleCondensed="Send Message To Tenant"
+      android:icon="@android:drawable/ic_delete"></item>
+
+</menu>

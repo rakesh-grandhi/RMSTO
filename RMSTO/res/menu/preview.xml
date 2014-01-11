@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_settings"/>
+    
+    <item android:id="@+id/COLOR_MENU_ID"
+      android:title="@string/menuitem_color" 
+      android:orderInCategory="1" android:alphabeticShortcut="c"
+      android:titleCondensed="@string/menuitem_color"
+      android:showAsAction="ifRoom"></item>
+      
+   <item android:id="@+id/WIDTH_MENU_ID" 
+      android:title="@string/menuitem_line_width"
+      android:orderInCategory="2" android:alphabeticShortcut="l"
+      android:titleCondensed="@string/menuitem_line_width"></item>
+   
+    <item android:id="@+id/ERASE_MENU_ID"
+      android:title="@string/menuitem_erase" 
+      android:orderInCategory="3" android:alphabeticShortcut="e"
+      android:titleCondensed="@string/menuitem_erase"></item>
+      
+   <item android:id="@+id/CLEAR_MENU_ID" 
+      android:title="@string/menuitem_clear"
+      android:orderInCategory="4" android:alphabeticShortcut="d"
+      android:titleCondensed="@string/menuitem_clear"></item>
+      
+   <item android:id="@+id/SAVE_MENU_ID"
+      android:title="@string/menuitem_save_image" 
+      android:orderInCategory="5" android:alphabeticShortcut="s"
+      android:titleCondensed="@string/menuitem_save_image"
+     android:showAsAction="ifRoom" ></item>
+      
+   <item android:id="@+id/UPLOAD_MENU_ID" 
+      android:title="@string/menuitem_upload_image"
+      android:orderInCategory="6" android:alphabeticShortcut="u"
+      android:titleCondensed="@string/menuitem_upload_image"
+      ></item>
+   
+  
+
+</menu>
