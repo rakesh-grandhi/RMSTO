@@ -141,8 +141,8 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_rooms">Rooms</string>
-    <string name="title_activity_room_list">RoomList</string>
-    <string name="title_activity_appliance_list">Appliance_list</string>
+    <string name="title_activity_room_list">Room List</string>
+    <string name="title_activity_appliance_list">Appliance List</string>
     <string name="title_activity_matcode_list">MatcodeList</string>
     <string name="title_activity_servicereq_list">ServicereqList</string>
     <string name="title_activity_work_request">WorkRequest</string>
@@ -169,7 +169,7 @@
     <string name="Status">Status:</string>
     <string name="rent_status">Rent Status:</string>
     <string name="Nick_Name">Nick Name:</string>
-    <string name="title_activity_ocrew_list">CrewList</string>
+    <string name="title_activity_ocrew_list">Crew List</string>
     <string name="title_activity_ocrew_display">Crew Display</string>
     <string name="title_activity_ocrew_edit">Crew Edit</string>
     <string name="title_activity_ocrew_mat">Assign MAT Code to Crew</string>

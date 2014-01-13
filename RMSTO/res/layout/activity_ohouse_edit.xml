@@ -296,41 +296,55 @@
                         android:maxLength="5" />
                 </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:paddingTop="20sp"
-                android:weightSum="2" >
-
-                <Button
-                    android:id="@+id/cancelhouseButton"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="0.75"
-                    android:background="#fb5614"
-                    android:drawableLeft="@drawable/ic_action_cancel"
-                    android:onClick="Cancel"
-                    android:text="Cancel"
-                    android:textColor="#FFFFFF" />
-
-                <Button
-                    android:id="@+id/savehouseButton"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
-                    android:layout_weight="0.75"
-                    android:background="#fb5614"
-                    android:drawableLeft="@drawable/ic_action_save"
-                    android:onClick="SaveHouse"
-                    android:text="Save"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
         </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corners"
+            android:orientation="vertical"
+            android:paddingBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:weightSum="2" >
+
+            <Button
+                android:id="@+id/cancelhouseButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_weight="0.75"
+                android:background="#fb5614"
+                android:drawableLeft="@drawable/ic_action_cancel"
+                android:onClick="Cancel"
+                android:text="Cancel"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/savehouseButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0.75"
+                android:background="#fb5614"
+                android:drawableLeft="@drawable/ic_action_save"
+                android:onClick="SaveHouse"
+                android:text="Save"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+</LinearLayout>
     </LinearLayout>
 
 </ScrollView>
