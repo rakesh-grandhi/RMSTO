@@ -111,7 +111,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="15dp"
                     android:layout_weight="0.75"
-                    android:background="#fb5614"
+                    android:background="@drawable/button"
                     android:onClick="ButtonLogin"
                     android:text="Log In"
                     android:textColor="#ffffff" />
@@ -121,7 +121,7 @@
                     android:layout_width="0dp"
                     android:layout_height="40.0dip"
                     android:layout_weight="0.75"
-                    android:background="#fb5614"
+                    android:background="@drawable/button"
                     android:onClick="Registeruser"
                     android:text="Resgister"
                     android:textColor="#ffffff" />

@@ -1,5 +1,7 @@
 package com.anica.rms;
 
+import java.util.ArrayList;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -10,7 +12,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class OHouseDisplay extends Activity {
@@ -20,8 +25,10 @@ public class OHouseDisplay extends Activity {
 	TextView TVHouseNickName;
 	TextView TVHouseAddress;
 	TextView TVHouseID;
-
+	TextView TVTenantName;
 	HouseObj houseobj;
+	Button BTNCheck;
+	Spinner SPTenants;
 
 	// id of contact being edited, if any
 
@@ -32,6 +39,7 @@ public class OHouseDisplay extends Activity {
 	// EditTexts for contact information
 
 	private HousesDbAdapter dbHouses;
+	private OTeantsDbAdapter dbTenants;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,15 +69,13 @@ public class OHouseDisplay extends Activity {
 		String SrowID;
 		long LrowID;
 
-		// TVHouseID = (TextView) findViewById(R.id.TV_HD_HouseID);
+		
 		TVHouseName = (TextView) findViewById(R.id.TV_HD_HouseName);
 		TVHouseNickName = (TextView) findViewById(R.id.TV_HD_HouseNickName);
-		// TVHouseNum = (EditText) findViewById(R.id.TV_HD);
 		TVHouseAddress = (TextView) findViewById(R.id.TV_HD_Address);
-		// TVHouseCity = (TextView) findViewById(R.id.TV_HD_City);
-		// TVHouseState = (TextView) findViewById(R.id.TV_HD_State);
-		// TVHouseZipcode = (TextView) findViewById(R.id.TV_HD_Zipcode);
-
+		BTNCheck = (Button) findViewById(R.id.BT_HD_CheckInOut);
+		TVTenantName = (TextView) findViewById(R.id.TV_HD_TenantName);
+		
 		TVHouseAddress.setMovementMethod(LinkMovementMethod.getInstance());
 
 		houseobj = new HouseObj();
@@ -83,6 +89,7 @@ public class OHouseDisplay extends Activity {
 		// SrowID = extras.getString("HOUSE_ID");
 
 		dbHouses = new HousesDbAdapter(this);
+		dbTenants = new OTeantsDbAdapter(this);
 		dbHouses.open();
 
 		// Cursor cursor = dbHelper.fetchDistnictOrders();
@@ -132,11 +139,39 @@ public class OHouseDisplay extends Activity {
 				.getColumnIndex("zipCode"));
 		// TVHouseZipcode.setText(houseobj.zipCode);
 		SZipcode = houseobj.zipCode;
-
+		
+		houseobj.status = Housescursor.getString(Housescursor.getColumnIndex("status"));
+		String S_Status = houseobj.status;
+		
+		if(S_Status.equals("O"))			//Occupied
+		{
+			BTNCheck.setText("Check Out");
+		}
+		else if(S_Status.equals("V"))		//Vacant
+		{
+			BTNCheck.setText("Check In");
+		}
+			
 		S_Address = SHouseNum + " " + SStreet + ", " + SCity + ", " + SState
 				+ " " + SZipcode;
 		TVHouseAddress.setText(S_Address);
 		dbHouses.close();
+		
+		dbTenants.open();
+		
+		Cursor Tenantcursor = dbTenants.fetchTenantsByHouseID(houseobj.houseName);
+		
+		String tenantName;
+		
+		if(Tenantcursor.getCount() > 0)
+		{
+			tenantName = Tenantcursor.getString(Tenantcursor
+					.getColumnIndex("teantName"));
+			
+			TVTenantName.setText(tenantName);
+		}
+		
+		dbTenants.close();
 
 		// Intent editHouseDet = new Intent(OHouseDisplay.this,
 		// OHouseEdit.class);
@@ -184,6 +219,12 @@ public class OHouseDisplay extends Activity {
 		Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
 				Uri.parse("google.navigation:q=" + S_Address));
 		startActivity(intent);
+	}
+	
+	public void CheckIn_CheckOut(View view)
+	{
+		Intent checkinoutIntent = new Intent(this,OTeantsList.class);
+		startActivity(checkinoutIntent);
 	}
 
 }

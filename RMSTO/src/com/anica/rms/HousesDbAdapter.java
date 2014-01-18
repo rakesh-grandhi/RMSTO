@@ -16,7 +16,6 @@ public class HousesDbAdapter {
 	public static final String KEY_HOUSENUM = "houseNum";
 	public static final String KEY_HOUSENICKNAME = "houseNickName";
 	public static final String KEY_HOUSEOWNER = "houseOwner";
-
 	public static final String KEY_STREET = "street";
 	public static final String KEY_CITY = "city";
 	public static final String KEY_STATE = "state";
@@ -30,6 +29,7 @@ public class HousesDbAdapter {
 	public static final String KEY_APPLIANCENAME = "applianceName";
 	public static final String KEY_APPLIANCENICKNAME = "applianceNickName";
 	public static final String KEY_STATUS = "status";
+	public static final String KEY_RECSTATUS = "recStatus";
 	public static final String KEY_RECTYPE = "rectype";
 
 	private static final String TAG = "RiserDbAdapter";
@@ -38,7 +38,7 @@ public class HousesDbAdapter {
 	private SQLiteDatabase mDb;
 	private static final String DATABASE_NAME = "RMS";
 	private static final String SQLITE_TABLE = "HOUSELIST";
-	private static final int DATABASE_VERSION = 10;
+	private static final int DATABASE_VERSION = 11;
 	private final Context mCtx;
 
 	private static final String DATABASE_CREATE = "CREATE TABLE if not exists "
@@ -49,7 +49,7 @@ public class HousesDbAdapter {
 			+ KEY_STATE + "," + KEY_ZIPCODE + "," + KEY_ROOMNAME + ","
 			+ KEY_ROOMID + "," + KEY_ROOMNICKNAME + "," + KEY_LEVEL + ","
 			+ KEY_TYPE + "," + KEY_APPLIANCENAME + "," + KEY_APPLIANCEID + ","
-			+ KEY_APPLIANCENICKNAME + "," + KEY_STATUS + "," + KEY_RECTYPE
+			+ KEY_APPLIANCENICKNAME + "," + KEY_RECSTATUS + "," + KEY_STATUS + "," + KEY_RECTYPE
 			+ "," + " UNIQUE (" + KEY_ROWID + " , " + KEY_ROOMNAME + " , "
 			+ KEY_APPLIANCENAME + "));";
 
@@ -92,32 +92,7 @@ public class HousesDbAdapter {
 		}
 	}
 
-	/*
-	 * public long createHouse(HouseObj house) {
-	 * 
-	 * ContentValues initialValues = new ContentValues();
-	 * 
-	 * initialValues.put(KEY_HOUSEID, house.houseID);
-	 * initialValues.put(KEY_HOUSENAME, house.houseName);
-	 * initialValues.put(KEY_HOUSENICKNAME, house.houseNickName);
-	 * initialValues.put(KEY_HOUSENUM, house.houseNum);
-	 * initialValues.put(KEY_STREET, house.street); initialValues.put(KEY_CITY,
-	 * house.city); initialValues.put(KEY_STATE, house.state);
-	 * initialValues.put(KEY_ZIPCODE, house.zipCode);
-	 * 
-	 * initialValues.put(KEY_ROOMID, house.roomID);
-	 * initialValues.put(KEY_ROOMNAME, house.roomName);
-	 * initialValues.put(KEY_ROOMNICKNAME, house.roomNickName);
-	 * initialValues.put(KEY_APPLIANCENAME, house.applianceName);
-	 * initialValues.put(KEY_APPLIANCENICKNAME, house.applianceNickName);
-	 * initialValues.put(KEY_APPLIANCEID, house.applianceID);
-	 * initialValues.put(KEY_TYPE, house.type); initialValues.put(KEY_LEVEL,
-	 * house.level);
-	 * 
-	 * return mDb.insert(SQLITE_TABLE, null, initialValues);
-	 * 
-	 * }
-	 */
+	
 	public boolean deleteAllRec()
 
 	{
@@ -206,9 +181,9 @@ public class HousesDbAdapter {
 				KEY_HOUSENICKNAME, KEY_HOUSEOWNER, KEY_ROOMNAME,
 				KEY_ROOMNICKNAME, KEY_ROOMID, KEY_STREET, KEY_CITY, KEY_STATE,
 				KEY_ZIPCODE, KEY_LEVEL, KEY_TYPE, KEY_APPLIANCENAME,
-				KEY_APPLIANCENICKNAME, KEY_APPLIANCEID, KEY_STATUS },
+				KEY_APPLIANCENICKNAME, KEY_APPLIANCEID, KEY_STATUS, KEY_RECSTATUS },
 				KEY_HOUSEID + " like '%" + houseID + "%'" + " AND "
-						+ KEY_STATUS + " like '%" + "A" + "%'" + " AND "
+						+ KEY_RECSTATUS + " like '%" + "A" + "%'" + " AND "
 						+ KEY_HOUSEOWNER + " like '%" + OwnerName + "%'"
 						+ " AND " + KEY_RECTYPE + " like '%" + "R" + "%'",
 				null, KEY_ROOMNAME, null, null, null);
@@ -228,7 +203,7 @@ public class HousesDbAdapter {
 				KEY_HOUSENICKNAME, KEY_HOUSEOWNER, KEY_ROOMNAME,
 				KEY_ROOMNICKNAME, KEY_ROOMID, KEY_STREET, KEY_CITY, KEY_STATE,
 				KEY_ZIPCODE, KEY_LEVEL, KEY_TYPE, KEY_APPLIANCENAME,
-				KEY_APPLIANCENICKNAME, KEY_APPLIANCEID, KEY_STATUS },
+				KEY_APPLIANCENICKNAME, KEY_APPLIANCEID, KEY_STATUS, KEY_RECSTATUS },
 				KEY_HOUSEID + " like '%" + houseID + "%'"
 
 				+ " AND " + KEY_HOUSEOWNER + " like '%" + OwnerName + "%'"
@@ -268,7 +243,7 @@ public class HousesDbAdapter {
 				KEY_STREET, KEY_CITY, KEY_STATE, KEY_ZIPCODE, KEY_LEVEL,
 				KEY_TYPE, KEY_APPLIANCENAME, KEY_APPLIANCENICKNAME,
 				KEY_APPLIANCEID }, KEY_HOUSEID + " like '%" + houseID + "%'"
-				+ " AND " + KEY_STATUS + " like '%" + "A" + "%'" + " AND "
+				+ " AND " + KEY_RECSTATUS + " like '%" + "A" + "%'" + " AND "
 				+ KEY_RECTYPE + " like '%" + "A" + "%'" + " AND "
 				+ KEY_HOUSEOWNER + " like '%" + Owner + "%'" + " AND "
 				+ KEY_ROOMID + " like '%" + roomID + "%'", null, null, null,
@@ -313,10 +288,11 @@ public class HousesDbAdapter {
 
 		mCursor = mDb.query(true, SQLITE_TABLE, new String[] { KEY_ROWID,
 				KEY_HOUSEID, KEY_HOUSENAME, KEY_HOUSENUM, KEY_HOUSENICKNAME,
-				KEY_ROOMNAME, KEY_ROOMNICKNAME, KEY_ROOMID, KEY_STREET,
-				KEY_CITY, KEY_STATE, KEY_ZIPCODE, KEY_LEVEL, KEY_TYPE,
-				KEY_APPLIANCENAME, KEY_APPLIANCENICKNAME, KEY_APPLIANCEID },
-				KEY_ROWID + " = " + rowID, null, null, null, null, null);
+				KEY_STATUS, KEY_ROOMNAME, KEY_ROOMNICKNAME, KEY_ROOMID,
+				KEY_STREET, KEY_CITY, KEY_STATE, KEY_ZIPCODE, KEY_LEVEL,
+				KEY_TYPE, KEY_APPLIANCENAME, KEY_APPLIANCENICKNAME,
+				KEY_APPLIANCEID }, KEY_ROWID + " = " + rowID, null, null, null,
+				null, null);
 
 		if (mCursor != null) {
 			mCursor.moveToFirst();
@@ -414,7 +390,8 @@ public class HousesDbAdapter {
 		insertValues.put(KEY_ZIPCODE, houseObj.zipCode);
 		insertValues.put(KEY_HOUSEOWNER, houseObj.houseOwner);
 		insertValues.put(KEY_RECTYPE, houseObj.rectype);
-		insertValues.put(KEY_STATUS, "A");
+		insertValues.put(KEY_STATUS, "V");
+		insertValues.put(KEY_RECSTATUS, "A");
 
 		/*
 		 * insertValues.put(KEY_APPLIANCEID,houseObj.applianceID);
@@ -446,6 +423,7 @@ public class HousesDbAdapter {
 		insertValues.put(KEY_HOUSEOWNER, houseObj.houseOwner);
 		insertValues.put(KEY_RECTYPE, houseObj.rectype);
 		insertValues.put(KEY_STATUS, "A");
+		insertValues.put(KEY_RECSTATUS, "A");
 
 		insertValues.put(KEY_APPLIANCEID, houseObj.applianceID);
 		insertValues.put(KEY_APPLIANCENAME, houseObj.applianceName);
@@ -475,6 +453,7 @@ public class HousesDbAdapter {
 		insertValues.put(KEY_HOUSEOWNER, houseObj.houseOwner);
 		insertValues.put(KEY_RECTYPE, houseObj.rectype);
 		insertValues.put(KEY_STATUS, "A");
+		insertValues.put(KEY_RECSTATUS, "A");
 
 		insertValues.put(KEY_ROOMID, houseObj.roomID);
 		insertValues.put(KEY_ROOMNAME, houseObj.roomName);
@@ -497,9 +476,9 @@ public class HousesDbAdapter {
 						KEY_ROOMNAME, KEY_ROOMNICKNAME, KEY_ROOMID, KEY_STREET,
 						KEY_CITY, KEY_STATE, KEY_ZIPCODE, KEY_LEVEL, KEY_TYPE,
 						KEY_APPLIANCENAME, KEY_APPLIANCENICKNAME,
-						KEY_APPLIANCEID, KEY_STATUS, KEY_RECTYPE },
+						KEY_APPLIANCEID, KEY_STATUS,KEY_RECSTATUS, KEY_RECTYPE },
 				KEY_HOUSEOWNER + " like '%" + owner + "%'" + " AND "
-						+ KEY_STATUS + " like '%" + "A" + "%'" + " AND "
+						+ KEY_RECSTATUS + " like '%" + "A" + "%'" + " AND "
 						+ KEY_RECTYPE + " like '%" + "H" + "%'", null,
 				KEY_HOUSEID, null, null, null);
 
@@ -522,7 +501,7 @@ public class HousesDbAdapter {
 						KEY_ROOMNAME, KEY_ROOMNICKNAME, KEY_ROOMID, KEY_STREET,
 						KEY_CITY, KEY_STATE, KEY_ZIPCODE, KEY_LEVEL, KEY_TYPE,
 						KEY_APPLIANCENAME, KEY_APPLIANCENICKNAME,
-						KEY_APPLIANCEID, KEY_STATUS, KEY_RECTYPE },
+						KEY_APPLIANCEID, KEY_STATUS, KEY_RECSTATUS, KEY_RECTYPE },
 				KEY_HOUSEOWNER + " like '%" + owner + "%'" + " AND "
 						+ KEY_RECTYPE + " like '%" + "H" + "%'", null,
 				KEY_HOUSEID, null, null, null);
@@ -578,6 +557,18 @@ public class HousesDbAdapter {
 				"houseOwner=? AND houseID=? AND roomID=?", args);
 		close(); // close the database
 	}
+	
+	public void updateHouseStatus(String houseID, HouseObj houseObj) {
+		ContentValues updateValues = new ContentValues();
+
+		updateValues.put(KEY_STATUS, houseObj.status);	//Occupied
+
+		open(); // open the database
+		String[] args = new String[] {houseID};
+
+		int Iresult = mDb.update(SQLITE_TABLE, updateValues, "houseName=?", args);
+		close(); // close the database
+	}
 
 	public void updateAppliance(String OwnerName, String houseID,
 			String roomID, String applID, HouseObj houseObj) {
@@ -596,6 +587,8 @@ public class HousesDbAdapter {
 				args);
 		close(); // close the database
 	}
+	
+	
 
 	public Cursor fetchAll() throws SQLException
 
@@ -625,12 +618,12 @@ public class HousesDbAdapter {
 
 		ContentValues updateValues = new ContentValues();
 
-		updateValues.put(KEY_STATUS, "D");
+		updateValues.put(KEY_RECSTATUS, "D");
 
 		open(); // open the database
 		String[] args = new String[] { roomID };
 
-		int Iresult = mDb.update(SQLITE_TABLE, updateValues, "roomID=?", args);
+		doneDelete = mDb.update(SQLITE_TABLE, updateValues, "roomID=?", args);
 		close(); // close the database
 
 		return doneDelete > 0;
@@ -644,12 +637,12 @@ public class HousesDbAdapter {
 
 		ContentValues updateValues = new ContentValues();
 
-		updateValues.put(KEY_STATUS, "D");
+		updateValues.put(KEY_RECSTATUS, "D");
 
 		open(); // open the database
 		String[] args = new String[] { applID };
 
-		int Iresult = mDb.update(SQLITE_TABLE, updateValues, "applianceID=?",
+		doneDelete = mDb.update(SQLITE_TABLE, updateValues, "applianceID=?",
 				args);
 		close(); // close the database
 

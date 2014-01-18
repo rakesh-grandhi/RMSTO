@@ -8,8 +8,7 @@
     <LinearLayout
         android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="5sp" >
 
@@ -131,6 +130,34 @@
 
                 <EditText
                     android:id="@+id/TV_CD_CrewNickName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:editable="false"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000" />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Company:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/TV_CD_CrewCompName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -346,17 +373,7 @@
                 android:paddingTop="20sp"
                 android:weightSum="3" >
 
-                <Button
-                    android:id="@+id/CrewActivate"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#fb5614"
-                    android:onClick="Activate"
-                    android:text="Activate"
-                    android:textColor="#FFFFFF" />
+               
 
                 <Button
                     android:id="@+id/AssignMAT"
@@ -365,9 +382,9 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:background="#fb5614"
-                    android:onClick="AssignMAT"
-                    android:text="Assign Skills"
+                    android:background="@drawable/button"
+                    android:onClick="Display_Skills"
+                    android:text="Display Skills"
                     android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>

@@ -38,6 +38,7 @@ public class OTeantEdit extends Activity implements OnItemSelectedListener {
 	ImageView IMHStatus;
 
 	OTenantObj tenantobj;
+	HouseObj houseObj;
 
 	private long LrowID; // id of contact being edited, if any
 	private String SrowID; // id of contact being edited, if any
@@ -50,6 +51,7 @@ public class OTeantEdit extends Activity implements OnItemSelectedListener {
 	// EditTexts for contact information
 
 	private OTeantsDbAdapter dbTenants;
+	private HousesDbAdapter dbHouses;
 
 	public static String Datepick;
 
@@ -117,8 +119,9 @@ public class OTeantEdit extends Activity implements OnItemSelectedListener {
 		TVtenantID.setEnabled(dis_mode);
 
 		tenantobj = new OTenantObj();
-
+		
 		dbTenants = new OTeantsDbAdapter(this);
+				
 		dbTenants.open();
 
 		if (OTeantsList.STenantID.equals("0")) {
@@ -211,8 +214,8 @@ public class OTeantEdit extends Activity implements OnItemSelectedListener {
 						.getColumnIndex("houseName"));
 				String HouseID = Housescursor.getString(Housescursor
 						.getColumnIndexOrThrow("houseID"));
-				String HouseIDName = HouseID + ":" + HouseName;
-				list.add(HouseIDName);
+				//String HouseIDName = HouseID + ":" + HouseName;
+				list.add(HouseName);
 				if (!Housescursor.moveToNext())
 					break;
 			}
@@ -264,7 +267,9 @@ public class OTeantEdit extends Activity implements OnItemSelectedListener {
 	public void SaveTenant(View view) {
 
 		int house_count;
-
+		houseObj = new HouseObj();
+		dbHouses = new HousesDbAdapter(this);
+		
 		LrowID = 0;
 		tenantobj.tenantName = ETTenantName.getText().toString();
 		tenantobj.tenantNickName = ETTenantNickName.getText().toString();
@@ -275,6 +280,13 @@ public class OTeantEdit extends Activity implements OnItemSelectedListener {
 		// tenantobj.status = ETStatus.getText().toString();
 		tenantobj.TenantStatus = TenantStatus;
 		tenantobj.houseID = HouseID;
+		
+		//Update house status to Occupied
+		
+		dbHouses.open();
+		houseObj.status = "O";	//Occupied
+		dbHouses.updateHouseStatus(HouseID, houseObj);
+		
 
 		dbTenants.open();
 
@@ -290,6 +302,7 @@ public class OTeantEdit extends Activity implements OnItemSelectedListener {
 				tenantobj.tenantID = Integer.toString(rec_count);
 
 				dbTenants.insertTenant(tenantobj);
+				
 				OTeantEdit.this.finish();
 			}
 

@@ -13,7 +13,7 @@ public class OApplianceDisplay extends Activity {
 	TextView TVApplName;
 	TextView TVApplNickName;
 	HouseObj houseobj;
-	String SHouseID;
+	String SHouseID, ApplID;
 	private HousesDbAdapter dbAppl;
 	public static long rowID;
 
@@ -63,6 +63,9 @@ public class OApplianceDisplay extends Activity {
 		houseobj.applianceNickName = Applcursor.getString(Applcursor
 				.getColumnIndex("applianceNickName"));
 		TVApplNickName.setText(houseobj.applianceNickName);
+		
+		ApplID = Applcursor.getString(Applcursor.getColumnIndex("applianceID"));
+		
 
 		dbAppl.close();
 
@@ -89,6 +92,13 @@ public class OApplianceDisplay extends Activity {
 			return true;
 
 		case R.id.deleteAppl:
+			
+			dbAppl.open();
+			
+			dbAppl.deleteAppl(ApplID);
+			
+			OApplianceDisplay.this.finish();
+			dbAppl.close();
 
 			return true;
 

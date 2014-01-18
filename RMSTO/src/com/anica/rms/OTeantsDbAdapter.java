@@ -222,6 +222,7 @@ public class OTeantsDbAdapter {
 
 		return mCursor;
 	}
+	
 
 	public Cursor fetchTenantsByHouseID(String inputText) throws SQLException
 

@@ -53,4 +53,20 @@
         <item>Fan</item>
         <item>Thermostat</item>
     </string-array>
+   <string-array name="StatesList">
+       <item>Refrigerator</item>
+        <item>Microwave</item>
+        <item>Oven</item>
+        <item>Stove</item>
+        <item>Dish Washer</item>
+        <item>Dryer</item>
+        <item>Washer</item>
+        <item>Food Dispenser</item>
+        <item>Water Heater</item>
+        <item>Air Conditioner</item>
+        <item>Bulb</item>
+        <item>Fan</item>
+        <item>Thermostat</item>
+       
+   </string-array>
 </resources>

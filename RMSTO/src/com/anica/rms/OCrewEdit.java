@@ -32,6 +32,7 @@ public class OCrewEdit extends Activity implements OnItemSelectedListener {
 	EditText ETCity;
 	EditText ETState;
 	EditText ETZipcode;
+	EditText ETCompanyName;
 
 	Spinner SPCrewStatus;
 	Spinner SPHouseID;
@@ -91,6 +92,7 @@ public class OCrewEdit extends Activity implements OnItemSelectedListener {
 		ETCity = (EditText) findViewById(R.id.ET_CE_City);
 		ETState = (EditText) findViewById(R.id.ET_CE_State);
 		ETZipcode = (EditText) findViewById(R.id.ET_CE_Zipcode);
+		ETCompanyName = (EditText)findViewById(R.id.ET_CE_CompanyName);
 
 		TVCrewID = (TextView) findViewById(R.id.TV_CE_CrewID);
 
@@ -129,6 +131,10 @@ public class OCrewEdit extends Activity implements OnItemSelectedListener {
 			Crewobj.crewNickName = Crewcursor.getString(Crewcursor
 					.getColumnIndex("crewNickName"));
 			ETCrewNickName.setText(Crewobj.crewNickName);
+			
+			Crewobj.crewCompanyName = Crewcursor.getString(Crewcursor
+					.getColumnIndex("crewCompanyName"));
+			ETCompanyName.setText(Crewobj.crewCompanyName);
 
 			Crewobj.startdate = Crewcursor.getString(Crewcursor
 					.getColumnIndex("startdate"));
@@ -244,6 +250,7 @@ public class OCrewEdit extends Activity implements OnItemSelectedListener {
 		LrowID = 0;
 		Crewobj.crewName = ETCrewName.getText().toString();
 		Crewobj.crewNickName = ETCrewNickName.getText().toString();
+		Crewobj.crewCompanyName = ETCompanyName.getText().toString();
 		// Crewobj.area = ETArea.getText().toString();
 		Crewobj.phonenum = ETPhoneNum.getText().toString();
 		Crewobj.email = ETEmail.getText().toString();
@@ -290,6 +297,18 @@ public class OCrewEdit extends Activity implements OnItemSelectedListener {
 	public void Cancel(View view) {
 
 		OCrewEdit.this.finish();
+
+	}
+	
+	public void Activate_Crew(View view)
+	{
+		dbCrews.open();
+		
+		dbCrews.activateCrew(CrewID);
+
+		OCrewEdit.this.finish();
+
+		dbCrews.close();
 
 	}
 

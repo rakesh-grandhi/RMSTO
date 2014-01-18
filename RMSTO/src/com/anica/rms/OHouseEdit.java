@@ -1,5 +1,14 @@
 package com.anica.rms;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -26,6 +35,7 @@ public class OHouseEdit extends Activity {
 	private long LrowID; // id of contact being edited, if any
 	private String SrowID; // id of contact being edited, if any
 	String SHouseID;
+	public String S_Zipcode;
 
 	// EditTexts for contact information
 
@@ -173,6 +183,40 @@ public class OHouseEdit extends Activity {
 	public void Cancel(View view) {
 
 		OHouseEdit.this.finish();
+
+	}
+
+	public void fill_city_state(View view) {
+
+		S_Zipcode = ETHouseZipcode.getText().toString();
+
+		if (S_Zipcode.equals(null)) {
+			Toast.makeText(getApplicationContext(), "Please enter a Zipcode.",
+					Toast.LENGTH_LONG).show();
+
+		} else {
+			Geocoder gc = new Geocoder(this, Locale.getDefault());
+			try {
+				List<Address> addresses = gc.getFromLocationName(S_Zipcode, 1);
+
+				Address address = addresses.get(0);
+				if (address.equals(null)) {
+					Toast.makeText(getApplicationContext(),
+							"No data found. Please input manually.",
+							Toast.LENGTH_LONG).show();
+				} else {
+					String City = address.getLocality();
+					String State = address.getAdminArea();
+
+					ETHouseCity.setText(City);
+					ETHouseState.setText(State);
+				}
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
 	}
 }

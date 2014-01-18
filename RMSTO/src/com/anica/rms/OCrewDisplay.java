@@ -28,6 +28,7 @@ public class OCrewDisplay extends Activity {
 	EditText ETArea;
 	EditText ETCrewNickName;
 	EditText ETAddress;
+	EditText ETCrewCompName;
 	static TextView TVStartDate;
 	static TextView TVEndDate;
 
@@ -42,7 +43,7 @@ public class OCrewDisplay extends Activity {
 
 	private OCrewsDbAdapter dbCrews;
 
-	OCrewObj crewobj;
+	static OCrewObj crewobj;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,7 @@ public class OCrewDisplay extends Activity {
 		ETAddress = (EditText) findViewById(R.id.TV_CD_Address);
 		ETPhoneNum = (EditText) findViewById(R.id.TV_CD_Phone);
 		ETEmail = (EditText) findViewById(R.id.TV_CD_Email);
+		ETCrewCompName = (EditText) findViewById(R.id.TV_CD_CrewCompName);
 
 		ETStatus = (EditText) findViewById(R.id.TV_CD_Status);
 
@@ -109,6 +111,10 @@ public class OCrewDisplay extends Activity {
 		crewobj.crewNickName = Crewcursor.getString(Crewcursor
 				.getColumnIndex("crewNickName"));
 		ETCrewNickName.setText(crewobj.crewNickName);
+		
+		crewobj.crewCompanyName = Crewcursor.getString(Crewcursor
+				.getColumnIndex("crewCompanyName"));
+		ETCrewCompName.setText(crewobj.crewCompanyName);
 
 		crewobj.phonenum = Crewcursor.getString(Crewcursor
 				.getColumnIndex("phonenum"));
@@ -207,6 +213,12 @@ public class OCrewDisplay extends Activity {
 		Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
 				"mailto", S_Email, null));
 		startActivity(emailIntent);
+	}
+	
+	public void Display_Skills(View view) {
+		
+			Intent displaySkills = new Intent(this,MatcodeList.class);
+			startActivity(displaySkills);
 	}
 
 }

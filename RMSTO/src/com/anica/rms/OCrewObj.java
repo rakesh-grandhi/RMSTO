@@ -7,6 +7,7 @@ public class OCrewObj {
 	public String level;
 	public String crewName;
 	public String crewNickName;
+	public String crewCompanyName;
 	public String houseOwner;
 	public String area;
 	public String phonenum;

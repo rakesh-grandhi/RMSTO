@@ -3,14 +3,14 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/gcm.jar"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/gson-2.2.2.jar"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/httpclient-4.2.3.jar"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/httpcore-4.2.2.jar"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/httpmime-4.2.3.jar"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/mobileservices-0.2.0.jar"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/mobileservices-0.2.0-javadoc.jar"/>
-	<classpathentry kind="lib" path="F:/Users/Rakesh/Documents/GitHub/RMSTO/RMSTO/libs/mobileservices-0.2.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/gcm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/httpclient-4.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/httpcore-4.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/httpmime-4.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/mobileservices-0.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/mobileservices-0.2.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Anica/Documents/GitHub/RMSTO/RMSTO/libs/mobileservices-0.2.0-sources.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>

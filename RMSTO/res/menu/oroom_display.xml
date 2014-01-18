@@ -15,7 +15,7 @@
       android:icon="@android:drawable/ic_delete"></item>
    
    <item android:id="@+id/DisplayAppl" 
-      android:title="DisplayAppl"
+      android:title="Display Appl"
       android:orderInCategory="2" android:alphabeticShortcut="r"
       android:titleCondensed="Dis Appl"
       android:icon="@android:drawable/ic_delete"></item>

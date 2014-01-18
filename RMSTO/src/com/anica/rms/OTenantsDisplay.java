@@ -25,13 +25,13 @@ import android.widget.AdapterView.OnItemSelectedListener;
 public class OTenantsDisplay extends Activity implements OnItemSelectedListener {
 
 	TextView TVtenantID;
-	EditText ETTenantName;
-	EditText ETTenantNickName;
-	EditText ETStartDate;
-	EditText ETEndDate;
+	TextView ETTenantName;
+	TextView ETTenantNickName;
+	TextView ETStartDate;
+	TextView ETEndDate;
 	static TextView TVStartDate;
 	static TextView TVEndDate;
-	EditText ETHouseID;
+	TextView ETHouseID;
 	Spinner SPTenantStatus;
 	ImageView IMHStatus;
 
@@ -97,10 +97,10 @@ public class OTenantsDisplay extends Activity implements OnItemSelectedListener 
 		LrowID = Long.parseLong(SrowID);
 		rowID = LrowID;
 
-		ETTenantName = (EditText) findViewById(R.id.ETTenantName);
+		ETTenantName = (TextView) findViewById(R.id.ETTenantName);
 		ETTenantName.setEnabled(dis_mode);
 
-		ETTenantNickName = (EditText) findViewById(R.id.ETTenantNickName);
+		ETTenantNickName = (TextView) findViewById(R.id.ETTenantNickName);
 		ETTenantNickName.setEnabled(dis_mode);
 
 		TVStartDate = (TextView) findViewById(R.id.ETStartDate);
@@ -109,7 +109,7 @@ public class OTenantsDisplay extends Activity implements OnItemSelectedListener 
 		TVEndDate = (TextView) findViewById(R.id.ETEndDate);
 		TVEndDate.setEnabled(dis_mode);
 
-		ETHouseID = (EditText) findViewById(R.id.ETHouseID);
+		ETHouseID = (TextView) findViewById(R.id.ETHouseID);
 		ETHouseID.setEnabled(dis_mode);
 
 		SPTenantStatus = (Spinner) findViewById(R.id.Status_spinner);
@@ -201,7 +201,7 @@ public class OTenantsDisplay extends Activity implements OnItemSelectedListener 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) // switch based on selected MenuItem's ID
 		{
-		case R.id.EditTenant:
+		case R.id.editTenant:
 
 			OTeantsList.Gdis_mode = true;
 			OTenantsDisplay.this.finish();
@@ -214,7 +214,7 @@ public class OTenantsDisplay extends Activity implements OnItemSelectedListener 
 
 			return true;
 
-		case R.id.Delete:
+		case R.id.deleteTenant:
 
 			dbTenants.open();
 

@@ -66,23 +66,21 @@
                     android:id="@+id/textView2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0.75"
                     android:text="Name:"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView 
                     android:id="@+id/TV_HD_HouseName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:editable="false"
-                    android:enabled="false"
+                    android:layout_weight="2.25"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#000000" >
 
                     <requestFocus />
-                </EditText>
+                </TextView>
             </LinearLayout>
 
             <LinearLayout
@@ -94,17 +92,16 @@
                     android:id="@+id/textView3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0.75"
                     android:text="Nick Name:"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/TV_HD_HouseNickName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:editable="false"
+                    android:layout_weight="2.25"
                     android:ems="10"
                     android:enabled="false"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -149,12 +146,12 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView 
                 android:id="@+id/TV_HD_Address"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:editable="false"
+               
                 android:ems="10"
                 android:enabled="false"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -200,6 +197,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="10sp"
                 android:paddingBottom="5sp"
                 android:weightSum="3" >
 
@@ -212,16 +210,14 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/TV_HD_TenantName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2.25"
-                    android:editable="false"
-                    android:ems="10"
-                    android:enabled="false"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#000000" />
+                	android:textColor="#000000"
+                    android:layout_weight="2.25"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -229,22 +225,21 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:paddingTop="20sp"
-                android:weightSum="2" >
+                 >
 
                 <Button
-                    android:id="@+id/saveContactButton"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:id="@+id/BT_HD_CheckInOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="0.75"
-                    android:background="#fb5614"
-                    android:onClick="CheckIn"
+                    android:padding="10sp"
+                    android:background="@drawable/button"
+                    android:onClick="CheckIn_CheckOut"
                     android:text="Check In"
                     android:textColor="#FFFFFF"
                      />
 
-                <Button
+                <!-- <Button
                     android:id="@+id/saveContactButton"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
@@ -254,7 +249,7 @@
                     android:background="#fb5614"
                     android:onClick="CheckOut"
                     android:text="Check Out"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF" /> -->
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

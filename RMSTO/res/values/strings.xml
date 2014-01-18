@@ -150,16 +150,16 @@
     <string name="title_activity_ohouses">Houses</string>
     <string name="title_activity_ohouses_list">House List</string>
     <string name="title_activity_oteants_list">Teants List</string>
-    <string name="title_activity_ohouse_edit">House</string>
-    <string name="title_activity_oteant_edit">Tenant</string>
-    <string name="title_activity_ohouse_display">Diaplay House</string>
+    <string name="title_activity_ohouse_edit">Edit House</string>
+    <string name="title_activity_oteant_edit">Edit Tenant</string>
+    <string name="title_activity_ohouse_display">Display House</string>
     <string name="menuitem_add_House">Add House</string>
     <string name="menuitem_add_Room">Add Room</string>
     <string name="menuitem_add_tenant">Add Tenant</string>
-    <string name="title_activity_oappliance_display">OapplianceDisplay</string>
-    <string name="title_activity_oappliance_edit">Appliance Edit</string>
-    <string name="title_activity_oroom_display">Room Display</string>
-    <string name="title_activity_oroom_edit">Room Edit</string>
+    <string name="title_activity_oappliance_display">Display Appliance</string>
+    <string name="title_activity_oappliance_edit">Edit Appliance</string>
+    <string name="title_activity_oroom_display">Display Room</string>
+    <string name="title_activity_oroom_edit">Edit Room</string>
     <string name="displayallRec">Display all records</string>
     <string name="add_appl">Add Appliance</string>
     <string name="title_activity_tenant_display"> Display Tenant</string>
@@ -173,5 +173,7 @@
     <string name="title_activity_ocrew_display">Crew Display</string>
     <string name="title_activity_ocrew_edit">Crew Edit</string>
     <string name="title_activity_ocrew_mat">Assign MAT Code to Crew</string>
+    <string name="Delete">Delete</string>
+    <string name="Edit">Edit</string>
 
 </resources>

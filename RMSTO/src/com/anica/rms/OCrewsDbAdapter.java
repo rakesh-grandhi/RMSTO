@@ -16,6 +16,7 @@ public class OCrewsDbAdapter {
 	public static final String KEY_CREWID = "crewID";
 	public static final String KEY_CREWNAME = "crewName";
 	public static final String KEY_CREWNICKNAME = "crewNickName";
+	public static final String KEY_COMPANYNAME = "crewCompanyName";
 	public static final String KEY_AREA = "area";
 	public static final String KEY_HOUSEOWNER = "houseOwner";
 	public static final String KEY_STARTDATE = "startdate";
@@ -39,14 +40,14 @@ public class OCrewsDbAdapter {
 	private SQLiteDatabase mDb;
 	private static final String DATABASE_NAME = "CREW";
 	private static final String SQLITE_TABLE = "CREWLIST";
-	private static final int DATABASE_VERSION = 4;
+	private static final int DATABASE_VERSION = 5;
 	private final Context mCtx;
 
 	private static final String DATABASE_CREATE = "CREATE TABLE if not exists "
 			+ SQLITE_TABLE + " (" + KEY_ROWID
 			+ " integer PRIMARY KEY autoincrement," + KEY_CREWID + ","
 			+ KEY_RECTYPE + "," + KEY_LEVEL + "," + KEY_CREWNAME + ","
-			+ KEY_CREWNICKNAME + "," + KEY_AREA + "," + KEY_HOUSEOWNER + ","
+			+ KEY_CREWNICKNAME + "," + KEY_COMPANYNAME + "," + KEY_AREA + "," + KEY_HOUSEOWNER + ","
 			+ KEY_ADDRESSID + "," + KEY_STARTDATE + "," + KEY_ENDDATE + ","
 			+ KEY_STATUS + "," + KEY_PHONENUM + "," + KEY_EMAIL + ","
 			+ KEY_HOUSENUM + "," + KEY_STREET + "," + KEY_CITY + ","
@@ -104,6 +105,7 @@ public class OCrewsDbAdapter {
 		initialValues.put(KEY_AREA, crew.area);
 		initialValues.put(KEY_CREWNAME, crew.crewName);
 		initialValues.put(KEY_CREWNICKNAME, crew.crewNickName);
+		initialValues.put(KEY_COMPANYNAME,crew.crewCompanyName);
 		initialValues.put(KEY_HOUSEOWNER, crew.houseOwner);
 		initialValues.put(KEY_ADDRESSID, crew.addressID);
 		initialValues.put(KEY_STARTDATE, crew.startdate);
@@ -167,7 +169,7 @@ public class OCrewsDbAdapter {
 		// Cursor mCursor = null;
 		Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] { KEY_ROWID,
 				KEY_CREWID, KEY_RECTYPE, KEY_LEVEL, KEY_AREA, KEY_CREWNAME,
-				KEY_CREWNICKNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
+				KEY_CREWNICKNAME,KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
 				KEY_ENDDATE, KEY_STATUS, KEY_EMAIL, KEY_PHONENUM, KEY_MATCODE,
 				KEY_APPLIANCENAME, KEY_WORKCENTER }, null, null, null, null,
 				null, null);
@@ -188,7 +190,7 @@ public class OCrewsDbAdapter {
 
 		mCursor = mDb.query(true, SQLITE_TABLE, new String[] { KEY_ROWID,
 				KEY_CREWID, KEY_RECTYPE, KEY_LEVEL, KEY_AREA, KEY_CREWNAME,
-				KEY_CREWNICKNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
+				KEY_CREWNICKNAME,KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
 				KEY_ENDDATE, KEY_STATUS, KEY_PHONENUM, KEY_EMAIL, KEY_HOUSENUM,
 				KEY_STREET, KEY_CITY, KEY_STATE, KEY_ZIPCODE, KEY_MATCODE,
 				KEY_APPLIANCENAME, KEY_WORKCENTER }, KEY_ROWID + " = " + rowID,
@@ -207,6 +209,7 @@ public class OCrewsDbAdapter {
 		initialValues.put(KEY_AREA, crew.area);
 		initialValues.put(KEY_CREWNAME, crew.crewName);
 		initialValues.put(KEY_CREWNICKNAME, crew.crewNickName);
+		initialValues.put(KEY_COMPANYNAME, crew.crewCompanyName);
 		initialValues.put(KEY_HOUSEOWNER, crew.houseOwner);
 		initialValues.put(KEY_ADDRESSID, crew.addressID);
 		initialValues.put(KEY_STARTDATE, crew.startdate);
@@ -237,7 +240,7 @@ public class OCrewsDbAdapter {
 
 		Cursor mCursor = mDb.query(true, SQLITE_TABLE, new String[] {
 				KEY_ROWID, KEY_CREWID, KEY_RECTYPE, KEY_AREA, KEY_CREWNAME,
-				KEY_CREWNICKNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
+				KEY_CREWNICKNAME,KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
 				KEY_ENDDATE, KEY_STATUS, KEY_MATCODE, KEY_WORKCENTER },
 				KEY_HOUSEOWNER + " like '%" + inputText + "%'", null,
 				KEY_CREWID, null, null, null);
@@ -268,6 +271,26 @@ public class OCrewsDbAdapter {
 
 	}
 
+	public boolean activateCrew(String crewID)
+
+	{
+		int doneActivate = 0;
+		ContentValues updateValues = new ContentValues();
+
+		updateValues.put(KEY_STATUS, "A");
+
+		open(); // open the database
+
+		String[] args = new String[] { crewID };
+
+		doneActivate = mDb.update(SQLITE_TABLE, updateValues, "crewID=?", args);
+
+		close(); // close the database
+
+		return doneActivate > 0;
+
+	}
+
 	public Cursor fetchAll() throws SQLException
 
 	{
@@ -276,7 +299,7 @@ public class OCrewsDbAdapter {
 
 		Cursor mCursor = mDb.query(true, SQLITE_TABLE, new String[] {
 				KEY_ROWID, KEY_CREWID, KEY_CREWNAME, KEY_HOUSENUM,
-				KEY_CREWNICKNAME, KEY_HOUSEOWNER, KEY_PHONENUM, KEY_AREA,
+				KEY_CREWNICKNAME,KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_PHONENUM, KEY_AREA,
 				KEY_EMAIL, KEY_STREET, KEY_CITY, KEY_STATE, KEY_ZIPCODE,
 				KEY_MATCODE, KEY_WORKCENTER }, null, null, null, null, null,
 				null);
@@ -319,7 +342,7 @@ public class OCrewsDbAdapter {
 
 		Cursor mCursor = mDb.query(true, SQLITE_TABLE, new String[] {
 				KEY_ROWID, KEY_CREWID, KEY_RECTYPE, KEY_AREA, KEY_CREWNAME,
-				KEY_CREWNICKNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
+				KEY_CREWNICKNAME,KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
 				KEY_ENDDATE, KEY_STATUS, KEY_MATCODE, KEY_WORKCENTER },
 				KEY_MATCODE + " like '%" + inputText + "%'", null, KEY_CREWID,
 				null, null, null);
@@ -339,7 +362,7 @@ public class OCrewsDbAdapter {
 
 		Cursor mCursor = mDb.query(true, SQLITE_TABLE, new String[] {
 				KEY_ROWID, KEY_CREWID, KEY_RECTYPE, KEY_AREA, KEY_CREWNAME,
-				KEY_CREWNICKNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
+				KEY_CREWNICKNAME,KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
 				KEY_ENDDATE, KEY_STATUS, KEY_MATCODE, KEY_APPLIANCENAME,
 				KEY_WORKCENTER }, KEY_APPLIANCENAME + " like '%" + inputText
 				+ "%'", null, KEY_CREWID, null, null, null);
@@ -373,6 +396,50 @@ public class OCrewsDbAdapter {
 
 		return doneDelete > 0;
 
+	}
+
+	public Cursor CrewExistsByMatcodeCrewName(String CrewID, String Matcode)
+			throws SQLException
+
+	{
+
+		// Cursor mCursor = null;
+
+		Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] { KEY_ROWID,
+				KEY_CREWID, KEY_RECTYPE, KEY_AREA, KEY_CREWNAME,
+				KEY_CREWNICKNAME, KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
+				KEY_ENDDATE, KEY_STATUS, KEY_MATCODE, KEY_WORKCENTER },
+				KEY_MATCODE + " like '%" + Matcode + "%'" + " AND "
+						+ KEY_CREWID + " like '%" + CrewID + "%'", null, null,
+				null, null, null);
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+
+		return mCursor;
+	}
+
+	public Cursor CrewExistsByApplCrewName(String CrewID, String Appl)
+			throws SQLException
+
+	{
+
+		// Cursor mCursor = null;
+
+		Cursor mCursor = mDb.query(SQLITE_TABLE, new String[] { KEY_ROWID,
+				KEY_CREWID, KEY_RECTYPE, KEY_AREA, KEY_CREWNAME,
+				KEY_CREWNICKNAME, KEY_COMPANYNAME, KEY_HOUSEOWNER, KEY_ADDRESSID, KEY_STARTDATE,
+				KEY_ENDDATE, KEY_STATUS, KEY_MATCODE, KEY_APPLIANCENAME,
+				KEY_WORKCENTER }, KEY_APPLIANCENAME + " like '%" + Appl + "%'"
+				+ " AND " + KEY_CREWID + " like '%" + CrewID + "%'", null,
+				null, null, null, null);
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+
+		return mCursor;
 	}
 
 }

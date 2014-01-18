@@ -21,6 +21,7 @@ public class HouseObj {
 	public String applianceID;
 	public String applianceNickName;
 	public String status;
+	public String recStatus;
 	public String rectype;
 
 }
